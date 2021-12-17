@@ -1,0 +1,74 @@
+<div class="container mt-5">
+
+  <div class="row">
+
+    <div class="col-6">
+      <form [formGroup]='userform'>
+        <div class="mb-3">
+          <label for="firstname" class="form-label">Firstname</label>
+          <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp"
+            formControlName="firstname" required>
+          <span style="color: red;" *ngIf="firstname && firstname.invalid && firstname.touched">This field is not valid </span>
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">lastname</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="lastname">
+        </div>
+        <span style="color: red;" *ngIf="lastname && lastname.invalid && lastname.touched">This field is no t valid</span>
+
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">email</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="email">
+        </div>
+        <span style="color: red;" *ngIf="email && email.invalid && email.touched">Email must be required</span>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"> mobile</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="mobile">
+        </div>
+        <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched">this field required your mobile Number</span>
+        <br>
+       
+      
+      </form>
+
+      <button type="submit" *ngIf="showyou" class="btn btn-primary" [disabled]="!userform.valid" (click)="onSubmit()">Submit</button>
+      
+      <button type="submit" *ngIf="showMe" class="btn btn-dark"  [disabled]="!userform.valid"  (click)="updateuserdetail()">update</button>
+    </div>
+    <div class="col-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Firstname</th>
+            <th scope="col">lastname</th>
+            <th scope="col">mobile</th>
+            <th scope="col">email</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let value of userlist">
+            <td>{{value.firstname}}</td>
+            <td>{{value.lastname}}</td>
+            <td>{{value.mobile}}</td>
+            <td>{{value.email}}</td>
+            <td>
+              <button  type="button" class="btn btn-primary" *ngIf="showdelete"  (click)="onDelete(value.id)">Delete</button>
+              <button  class="btn-success mx-1" (click)="edit(value)">edit</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+
+</div>
+<!-- Button trigger modal -->
+
