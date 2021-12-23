@@ -1,6 +1,36 @@
 {
-  "posts": [],
-  "comments": [],
+  "posts": [
+    {
+      "firstname": "sgffff",
+      "lastname": "fffffffffffffefs",
+      "email": "12@gmail.cvom",
+      "mobile": "16358",
+      "id": 5
+    },
+    {
+      "firstname": "wqdqd",
+      "lastname": "wdqdqw",
+      "email": "vv@gmail.com",
+      "mobile": "12342424",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "Name": "nishanydvjh",
+      "mail": "nishant",
+      "password": "123456",
+      "mobile": "123445",
+      "id": 6
+    },
+    {
+      "Name": "nishant verma",
+      "mail": "vnishant812@gmail.com",
+      "password": "123456",
+      "mobile": "7905322476",
+      "id": 7
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

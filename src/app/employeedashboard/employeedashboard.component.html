@@ -1,3 +1,16 @@
+<nav class="navbar navbar-success bg-dark justify-content-between">
+  <a class="navbar-brand" style="color: aliceblue;">User Detail</a>
+  <form class="form-inline">
+
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="/login">logOut</button>
+  </form>
+</nav>
+
+
+
+
+
+
 <div class="container mt-5">
 
   <div class="row">
@@ -8,14 +21,16 @@
           <label for="firstname" class="form-label">Firstname</label>
           <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp"
             formControlName="firstname" required>
-          <span style="color: red;" *ngIf="firstname && firstname.invalid && firstname.touched">This field is not valid </span>
+          <span style="color: red;" *ngIf="firstname && firstname.invalid && firstname.touched">This field is not valid
+          </span>
 
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">lastname</label>
           <input type="text" class="form-control" id="exampleInputPassword1" formControlName="lastname">
         </div>
-        <span style="color: red;" *ngIf="lastname && lastname.invalid && lastname.touched">This field is no t valid</span>
+        <span style="color: red;" *ngIf="lastname && lastname.invalid && lastname.touched">This field is no t
+          valid</span>
 
 
         <div class="mb-3">
@@ -28,15 +43,18 @@
           <label for="exampleInputPassword1" class="form-label"> mobile</label>
           <input type="text" class="form-control" id="exampleInputPassword1" formControlName="mobile">
         </div>
-        <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched">this field required your mobile Number</span>
+        <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched">this field required your mobile
+          Number</span>
         <br>
-       
-      
+
+
       </form>
 
-      <button type="submit" *ngIf="showyou" class="btn btn-primary" [disabled]="!userform.valid" (click)="onSubmit()">Submit</button>
-      
-      <button type="submit" *ngIf="showMe" class="btn btn-dark"  [disabled]="!userform.valid"  (click)="updateuserdetail()">update</button>
+      <button type="submit" *ngIf="showyou" class="btn btn-primary" [disabled]="!userform.valid"
+        (click)="onSubmit()">Submit</button>
+
+      <button type="submit" *ngIf="showMe" class="btn btn-dark" [disabled]="!userform.valid"
+        (click)="updateuserdetail()">update</button>
     </div>
     <div class="col-6">
       <table class="table">
@@ -56,8 +74,8 @@
             <td>{{value.mobile}}</td>
             <td>{{value.email}}</td>
             <td>
-              <button  type="button" class="btn btn-primary" *ngIf="showdelete"  (click)="onDelete(value.id)">Delete</button>
-              <button  class="btn-success mx-1" (click)="edit(value)">edit</button>
+              <button type="button" class="btn-danger" *ngIf="showdelete" (click)="onDelete(value.id)">Delete</button>
+              <button class="btn-success mx-1" (click)="edit(value)">edit</button>
             </td>
           </tr>
 
@@ -71,4 +89,3 @@
 
 </div>
 <!-- Button trigger modal -->
-

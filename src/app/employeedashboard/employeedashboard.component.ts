@@ -35,7 +35,7 @@ showdelete=true
   onSubmit() {
 
     this.service.postApi(this.userform.value).subscribe((res) => {
-      console.log("res")
+      console.log(res)
       this.getApi();
       this.userform.reset();
       alert('new user added successfully')

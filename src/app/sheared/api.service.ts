@@ -7,6 +7,7 @@ import { ROUTER_CONFIGURATION } from '@angular/router';
 })
 export class ApiService {
   Api = " http://localhost:3000/posts"
+  apiSign="http://localhost:3000/comments"
   constructor(private http: HttpClient) { }
 
   getApi() {
@@ -25,6 +26,12 @@ export class ApiService {
    return this.http.patch(this.Api+'/'+id,data)
    
    
+  }
+  postSign(data){
+    return this.http.post(this.apiSign,data)
+  }
+  loginApi() {
+    return this.http.get(this.apiSign)
   }
 }
 
